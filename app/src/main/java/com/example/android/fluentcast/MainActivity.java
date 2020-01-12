@@ -1,6 +1,9 @@
 package com.example.android.fluentcast;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -15,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ArrayList<String> topics = new ArrayList<>();
+        final ArrayList<String> topics = new ArrayList<>();
         topics.add("People");
         topics.add("Travelling");
         topics.add("Leisure");
@@ -26,5 +29,13 @@ public class MainActivity extends AppCompatActivity {
         ListView view = findViewById(R.id.topic_list);
         view.setAdapter(arrayAdapter);
 
+        view.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+                Intent topicIntent = new Intent(MainActivity.this, TopicActivity.class);
+                topicIntent.putExtra("EXTRA_TOPIC_NAME", parent.getItemAtPosition(position).toString());
+                startActivity(topicIntent);
+            }
+        });
     }
 }
