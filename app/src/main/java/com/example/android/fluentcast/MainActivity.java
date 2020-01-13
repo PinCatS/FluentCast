@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.GridView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,16 +17,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.topic_list);
 
-        final ArrayList<String> topics = new ArrayList<>();
-        topics.add("People");
-        topics.add("Travelling");
-        topics.add("Leisure");
-        topics.add("At home");
-        topics.add("Technologies");
+        final ArrayList<TopicCard> topics = new ArrayList<>();
+        topics.add(new TopicCard("People", 6));
+        topics.add(new TopicCard("Travelling", 2));
+        topics.add(new TopicCard("Leisure", 2));
+        topics.add(new TopicCard("At home", 1));
+        topics.add(new TopicCard("Technologies", 2));
 
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, topics);
+        TopicCardAdapter topicCardAdapter = new TopicCardAdapter(this, topics);
         GridView view = findViewById(R.id.topic_list);
-        view.setAdapter(arrayAdapter);
+        view.setAdapter(topicCardAdapter);
 
         view.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

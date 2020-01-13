@@ -19,6 +19,7 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/topic_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#FFFFFF"
@@ -26,6 +27,7 @@
             tools:text="People" />
 
         <TextView
+            android:id="@+id/podcast_count"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#DDDDDD"
