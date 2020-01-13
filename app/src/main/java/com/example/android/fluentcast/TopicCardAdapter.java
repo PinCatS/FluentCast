@@ -20,18 +20,30 @@ public class TopicCardAdapter extends ArrayAdapter<TopicCard> {
     @Override
     public View getView(int position, @Nullable View convertView, ViewGroup parent) {
 
+        ViewHolder viewHolder;
+
         if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.topic_item, parent, false);
+
+            viewHolder = new ViewHolder();
+            viewHolder.cardTitleView = convertView.findViewById(R.id.topic_title);
+            viewHolder.podcastCountView = convertView.findViewById(R.id.podcast_count);
+
+            convertView.setTag(viewHolder);
+        } else {
+            viewHolder = (ViewHolder) convertView.getTag();
         }
 
         TopicCard card = getItem(position);
 
-        TextView textView = convertView.findViewById(R.id.topic_title);
-        textView.setText(card.getTitle());
-
-        textView = convertView.findViewById(R.id.podcast_count);
-        textView.setText(card.getNumberOfPodcasts());
+        viewHolder.cardTitleView.setText(card.getTitle());
+        viewHolder.podcastCountView.setText(card.getNumberOfPodcasts());
 
         return convertView;
+    }
+
+    private static class ViewHolder {
+        TextView cardTitleView;
+        TextView podcastCountView;
     }
 }
