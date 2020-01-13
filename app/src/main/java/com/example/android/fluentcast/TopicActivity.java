@@ -1,7 +1,8 @@
 package com.example.android.fluentcast;
 
 import android.os.Bundle;
-import android.util.Log;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,7 +14,7 @@ public class TopicActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_people);
+        setContentView(R.layout.podcast_list);
 
         String topic_name = getIntent().getStringExtra("EXTRA_TOPIC_NAME");
         if (topic_name == null) {
@@ -56,7 +57,8 @@ public class TopicActivity extends AppCompatActivity {
                 throw new IllegalArgumentException("Unrecognized podcast category: " + topic_name);
         }
 
-        for (String podcast : podcasts)
-            Log.v("TopicActivity.java", "Podcast: " + podcast);
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, podcasts);
+        ListView podcastList = findViewById(R.id.podcast_list);
+        podcastList.setAdapter(arrayAdapter);
     }
 }
