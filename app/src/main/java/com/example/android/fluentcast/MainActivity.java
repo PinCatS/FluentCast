@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ListView;
+import android.widget.GridView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.topic_list);
 
         final ArrayList<String> topics = new ArrayList<>();
         topics.add("People");
@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         topics.add("Technologies");
 
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, topics);
-        ListView view = findViewById(R.id.topic_list);
+        GridView view = findViewById(R.id.topic_list);
         view.setAdapter(arrayAdapter);
 
         view.setOnItemClickListener(new AdapterView.OnItemClickListener() {
