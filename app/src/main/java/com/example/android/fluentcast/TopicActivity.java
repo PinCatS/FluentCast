@@ -6,6 +6,7 @@ import android.util.Log;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
+import java.util.MissingResourceException;
 
 public class TopicActivity extends AppCompatActivity {
 
@@ -15,6 +16,9 @@ public class TopicActivity extends AppCompatActivity {
         setContentView(R.layout.activity_people);
 
         String topic_name = getIntent().getStringExtra("EXTRA_TOPIC_NAME");
+        if (topic_name == null) {
+            throw new MissingResourceException("No topic name", "TopicActivity.java", "EXTRA_TOPIC_NAME");
+        }
 
         this.setTitle(topic_name);
 
