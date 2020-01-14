@@ -2,6 +2,7 @@ package com.example.android.fluentcast;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -25,6 +26,8 @@ public class TopicActivity extends AppCompatActivity {
         }
 
         this.setTitle(topic_name);
+
+        Log.d("TopicActivity.java", "onCreate: topic name: " + topic_name);
 
         final ArrayList<String> podcasts = new ArrayList<>();
         /*
@@ -55,6 +58,12 @@ public class TopicActivity extends AppCompatActivity {
             case "Technologies":
                 podcasts.add("Setting up an interview");
                 podcasts.add("Can't open the link");
+                break;
+            case "Business":
+                break;
+            case "Cultures":
+                break;
+            case "Story tails":
                 break;
             default:
                 throw new IllegalArgumentException("Unrecognized podcast category: " + topic_name);

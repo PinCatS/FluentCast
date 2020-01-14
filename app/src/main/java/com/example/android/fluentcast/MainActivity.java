@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -23,6 +24,9 @@ public class MainActivity extends AppCompatActivity {
         topics.add(new TopicCard("Leisure", 2));
         topics.add(new TopicCard("At home", 1));
         topics.add(new TopicCard("Technologies", 2));
+        topics.add(new TopicCard("Business", 0));
+        topics.add(new TopicCard("Cultures", 0));
+        topics.add(new TopicCard("Story tails", 0));
 
         TopicCardAdapter topicCardAdapter = new TopicCardAdapter(this, topics);
         GridView view = findViewById(R.id.topic_list);
@@ -32,7 +36,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
                 Intent topicIntent = new Intent(MainActivity.this, TopicActivity.class);
-                topicIntent.putExtra("EXTRA_TOPIC_NAME", parent.getItemAtPosition(position).toString());
+                TextView textView = v.findViewById(R.id.topic_title);
+                topicIntent.putExtra("EXTRA_TOPIC_NAME", textView.getText());
                 startActivity(topicIntent);
             }
         });
