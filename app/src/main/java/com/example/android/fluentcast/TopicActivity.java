@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -74,9 +75,10 @@ public class TopicActivity extends AppCompatActivity {
 
         podcastList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
                 Intent podcastIntent = new Intent(TopicActivity.this, PodcastActivity.class);
-                podcastIntent.putExtra("EXTRA_PODCAST_NAME", parent.getItemAtPosition(position).toString());
+                TextView textView = v.findViewById(R.id.podcast_title);
+                podcastIntent.putExtra("EXTRA_PODCAST_NAME", textView.getText());
                 startActivity(podcastIntent);
             }
         });
