@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,7 +28,7 @@ public class TopicActivity extends AppCompatActivity {
 
         Log.d("TopicActivity.java", "onCreate: topic name: " + topic_name);
 
-        final ArrayList<String> podcasts = new ArrayList<>();
+        final ArrayList<Podcast> podcasts = new ArrayList<>();
         /*
          * In the future podcasts will be loaded from the server by key
          * or identifier. But now use the switch statement for this.
@@ -37,27 +36,27 @@ public class TopicActivity extends AppCompatActivity {
          * */
         switch (topic_name) {
             case "People":
-                podcasts.add("Hi! My name is Peter");
-                podcasts.add("I can't talk now");
-                podcasts.add("Can you do me a favor?");
-                podcasts.add("Excuse me!");
-                podcasts.add("I'm sorry!");
-                podcasts.add("Caring about others");
+                podcasts.add(new Podcast("Hi! My name is Peter", "elementary", 67));
+                podcasts.add(new Podcast("I can't talk now", "elementary", 15));
+                podcasts.add(new Podcast("Can you do me a favor?", "pre-intermediate", 34));
+                podcasts.add(new Podcast("Excuse me!", "elementary", 23));
+                podcasts.add(new Podcast("I'm sorry!", "elementary", 89));
+                podcasts.add(new Podcast("Caring about others", "intermediate", 132));
                 break;
             case "Travelling":
-                podcasts.add("Check in at the airport");
-                podcasts.add("Asking for the place");
+                podcasts.add(new Podcast("Check in at the airport", "intermediate", 287));
+                podcasts.add(new Podcast("Asking for the place", "intermediate", 58));
                 break;
             case "Leisure":
-                podcasts.add("In the restaurant");
-                podcasts.add("Asking for the menu");
+                podcasts.add(new Podcast("In the restaurant", "intermediate", 598));
+                podcasts.add(new Podcast("Asking for the menu", "pre-intermediate", 165));
                 break;
             case "At home":
-                podcasts.add("Returning clothes");
+                podcasts.add(new Podcast("Returning clothes", "intermediate", 287));
                 break;
             case "Technologies":
-                podcasts.add("Setting up an interview");
-                podcasts.add("Can't open the link");
+                podcasts.add(new Podcast("Setting up an interview", "upper-intermediate", 54));
+                podcasts.add(new Podcast("Can't open the link", "pre=intermediate", 48));
                 break;
             case "Business":
                 break;
@@ -69,9 +68,9 @@ public class TopicActivity extends AppCompatActivity {
                 throw new IllegalArgumentException("Unrecognized podcast category: " + topic_name);
         }
 
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, podcasts);
+        PodcastAdapter podcastAdapter = new PodcastAdapter(this, podcasts);
         ListView podcastList = findViewById(R.id.podcast_list);
-        podcastList.setAdapter(arrayAdapter);
+        podcastList.setAdapter(podcastAdapter);
 
         podcastList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
