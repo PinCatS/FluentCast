@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -28,6 +29,7 @@ public class TopicCardAdapter extends ArrayAdapter<TopicCard> {
             viewHolder = new ViewHolder();
             viewHolder.cardTitleView = convertView.findViewById(R.id.topic_title);
             viewHolder.podcastCountView = convertView.findViewById(R.id.podcast_count);
+            viewHolder.cardImageView = convertView.findViewById(R.id.topic_image);
 
             convertView.setTag(viewHolder);
         } else {
@@ -38,6 +40,7 @@ public class TopicCardAdapter extends ArrayAdapter<TopicCard> {
 
         viewHolder.cardTitleView.setText(card.getTitle());
         viewHolder.podcastCountView.setText(card.getNumberOfPodcasts());
+        viewHolder.cardImageView.setImageResource(card.getImageResourceId());
 
         return convertView;
     }
@@ -45,5 +48,6 @@ public class TopicCardAdapter extends ArrayAdapter<TopicCard> {
     private static class ViewHolder {
         TextView cardTitleView;
         TextView podcastCountView;
+        ImageView cardImageView;
     }
 }
