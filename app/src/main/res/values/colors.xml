@@ -3,4 +3,11 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="people_card_color">#f44336</color>
+    <color name="travelling_card_color">#000000</color>
+    <color name="leisure_card_color">#ffb300</color>
+    <color name="home_card_color">#303f9f</color>
+    <color name="technologies_card_color">#263238</color>
+    <color name="business_card_color">#212121</color>
+    <color name="culture_card_color">#9e9d24</color>
 </resources>

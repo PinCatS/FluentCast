@@ -6,9 +6,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 
 import java.util.List;
 
@@ -30,6 +32,7 @@ public class TopicCardAdapter extends ArrayAdapter<TopicCard> {
             viewHolder.cardTitleView = convertView.findViewById(R.id.topic_title);
             viewHolder.podcastCountView = convertView.findViewById(R.id.podcast_count);
             viewHolder.cardImageView = convertView.findViewById(R.id.topic_image);
+            viewHolder.cardTitleFrameLinearLayout = convertView.findViewById(R.id.topic_title_frame);
 
             convertView.setTag(viewHolder);
         } else {
@@ -40,7 +43,15 @@ public class TopicCardAdapter extends ArrayAdapter<TopicCard> {
 
         viewHolder.cardTitleView.setText(card.getTitle());
         viewHolder.podcastCountView.setText(card.getNumberOfPodcasts());
-        viewHolder.cardImageView.setImageResource(card.getImageResourceId());
+
+        if (card.hasValidImage()) {
+            viewHolder.cardImageView.setImageResource(card.getImageResourceId());
+        }
+
+        if (card.hasValidColor()) {
+            int color = ContextCompat.getColor(getContext(), card.getCardColorResourceId());
+            viewHolder.cardTitleFrameLinearLayout.setBackgroundColor(color);
+        }
 
         return convertView;
     }
@@ -49,5 +60,6 @@ public class TopicCardAdapter extends ArrayAdapter<TopicCard> {
         TextView cardTitleView;
         TextView podcastCountView;
         ImageView cardImageView;
+        LinearLayout cardTitleFrameLinearLayout;
     }
 }

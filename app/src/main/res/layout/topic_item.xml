@@ -25,15 +25,16 @@
                 android:id="@+id/topic_image"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:scaleType="center"
-                tools:src="@drawable/people" />
+                android:scaleType="centerCrop"
+                tools:src="@drawable/culture" />
 
             <LinearLayout
+                android:id="@+id/topic_title_frame"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:layout_alignParentBottom="true"
-                android:alpha="0.8"
-                android:background="#f44336"
+                android:alpha="0.9"
+                tools:background="@color/culture_card_color"
                 android:orientation="vertical">
 
                 <TextView
@@ -42,7 +43,7 @@
                     android:layout_height="wrap_content"
                     android:paddingLeft="16dp"
                     android:paddingTop="8dp"
-                    android:text="People"
+                    tools:text="People"
                     android:textColor="@android:color/white"
                     android:textSize="24sp"
                     android:textStyle="bold" />

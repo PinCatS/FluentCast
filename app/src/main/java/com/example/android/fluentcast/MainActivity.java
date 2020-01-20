@@ -19,13 +19,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.topic_list);
 
         final ArrayList<TopicCard> topics = new ArrayList<>();
-        topics.add(new TopicCard("People", 6, R.drawable.people));
-        topics.add(new TopicCard("Travelling", 2, R.drawable.travelling));
-        topics.add(new TopicCard("Leisure", 2, R.drawable.leisure));
-        topics.add(new TopicCard("At home", 1, R.drawable.at_home));
-        topics.add(new TopicCard("Technologies", 2, R.drawable.technologies));
-        topics.add(new TopicCard("Business", 0, R.drawable.business));
-        topics.add(new TopicCard("Cultures", 0, R.drawable.culture));
+        topics.add(new TopicCard("People", 6, R.drawable.people, R.color.people_card_color));
+        topics.add(new TopicCard("Travelling", 2, R.drawable.travelling, R.color.travelling_card_color));
+        topics.add(new TopicCard("Leisure", 2, R.drawable.leisure, R.color.leisure_card_color));
+        topics.add(new TopicCard("At home", 1, R.drawable.at_home, R.color.home_card_color));
+        topics.add(new TopicCard("Technologies", 2, R.drawable.technologies, R.color.technologies_card_color));
+        topics.add(new TopicCard("Business", 0, R.drawable.business, R.color.business_card_color));
+        topics.add(new TopicCard("Cultures", 0, R.drawable.culture, R.color.culture_card_color));
         topics.add(new TopicCard("Story tails", 0));
 
         TopicCardAdapter topicCardAdapter = new TopicCardAdapter(this, topics);
