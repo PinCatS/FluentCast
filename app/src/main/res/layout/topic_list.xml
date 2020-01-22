@@ -6,6 +6,7 @@
     android:numColumns="2"
     android:orientation="vertical"
     android:paddingLeft="16dp"
-    android:paddingRight="16dp">
+    android:paddingRight="16dp"
+    android:scrollbars="none">
 
 </GridView>
