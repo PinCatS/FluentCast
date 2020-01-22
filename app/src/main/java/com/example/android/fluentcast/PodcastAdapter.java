@@ -1,10 +1,12 @@
 package com.example.android.fluentcast;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -13,6 +15,16 @@ import androidx.core.content.ContextCompat;
 import java.util.List;
 
 class PodcastAdapter extends ArrayAdapter<Podcast> {
+
+    private View.OnClickListener mClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            int position = (int) v.getTag();
+            Podcast podcast = getItem(position);
+            podcast.mLikesCounter++;
+            Log.v("PodcastAdapter.java", "likes.OnClickListener: like was clicked. Current likes " + podcast.mLikesCounter);
+        }
+    };
 
     public PodcastAdapter(Context context, List<Podcast> podcasts) {
         super(context, 0, podcasts);
@@ -30,6 +42,7 @@ class PodcastAdapter extends ArrayAdapter<Podcast> {
             viewHolder.podcastTitleView = convertView.findViewById(R.id.podcast_title);
             viewHolder.podcastLevelView = convertView.findViewById(R.id.podcast_level);
             viewHolder.podcastLikesCounterView = convertView.findViewById(R.id.likes_count);
+            viewHolder.likesButton = convertView.findViewById(R.id.likes_icon);
 
             convertView.setTag(viewHolder);
         } else {
@@ -51,6 +64,9 @@ class PodcastAdapter extends ArrayAdapter<Podcast> {
             viewHolder.podcastLevelView.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.language_level_tag_upper_intermediate_background));
         }
         viewHolder.podcastLikesCounterView.setText(String.valueOf(podcast.getLikesCounter()));
+        viewHolder.likesButton.setOnClickListener(mClickListener);
+        viewHolder.likesButton.setTag(position);
+
 
         return convertView;
     }
@@ -59,5 +75,6 @@ class PodcastAdapter extends ArrayAdapter<Podcast> {
         TextView podcastTitleView;
         TextView podcastLevelView;
         TextView podcastLikesCounterView;
+        ImageView likesButton;
     }
 }
