@@ -10,4 +10,8 @@
     <color name="technologies_card_color">#263238</color>
     <color name="business_card_color">#212121</color>
     <color name="culture_card_color">#9e9d24</color>
+    <color name="level_elementary_color">#fff59d</color>
+    <color name="level_preintermediate_color">#c5e1a5</color>
+    <color name="level_intermediate_color">#90caf9</color>
+    <color name="level_upper_intermediate_color">#b39ddb</color>
 </resources>

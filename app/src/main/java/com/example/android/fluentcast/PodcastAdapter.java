@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 
 import java.util.List;
 
@@ -38,7 +39,17 @@ class PodcastAdapter extends ArrayAdapter<Podcast> {
         Podcast podcast = getItem(position);
 
         viewHolder.podcastTitleView.setText(podcast.getTitle());
-        viewHolder.podcastLevelView.setText(podcast.getLevel());
+        String level = podcast.getLevel();
+        viewHolder.podcastLevelView.setText(level);
+        if (level == "elementary") {
+            viewHolder.podcastLevelView.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.language_level_tag_elementary_background));
+        } else if (level == "pre-intermediate") {
+            viewHolder.podcastLevelView.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.language_level_tag_preintermediate_background));
+        } else if (level == "intermediate") {
+            viewHolder.podcastLevelView.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.language_level_tag_intermediate_background));
+        } else if (level == "upper-intermediate") {
+            viewHolder.podcastLevelView.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.language_level_tag_upper_intermediate_background));
+        }
         viewHolder.podcastLikesCounterView.setText(String.valueOf(podcast.getLikesCounter()));
 
         return convertView;

@@ -57,7 +57,7 @@ public class TopicActivity extends AppCompatActivity {
                 break;
             case "Technologies":
                 podcasts.add(new Podcast("Setting up an interview", "upper-intermediate", 54));
-                podcasts.add(new Podcast("Can't open the link", "pre=intermediate", 48));
+                podcasts.add(new Podcast("Can't open the link", "pre-intermediate", 48));
                 break;
             case "Business":
                 break;
