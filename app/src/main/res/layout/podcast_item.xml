@@ -22,32 +22,43 @@
             android:textStyle="bold"
             tools:text="Hi! My name is Peter" />
 
-        <TextView
-            android:id="@+id/podcast_level"
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/podcast_title"
-            android:layout_marginLeft="16dp"
-            android:background="@drawable/language_level_tag_background"
-            android:textColor="#757575"
-            android:textSize="14sp"
-            tools:text="elementary" />
+            android:orientation="horizontal"
+            android:paddingTop="8dp">
 
-        <ImageView
-            android:layout_width="18dp"
-            android:layout_height="18dp"
-            android:layout_below="@+id/podcast_title"
-            android:layout_toLeftOf="@+id/likes_count"
-            android:background="@android:color/holo_red_dark" />
+            <TextView
+                android:id="@+id/podcast_level"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:background="@drawable/language_level_tag_background"
+                android:textColor="#757575"
+                android:textSize="14sp"
+                tools:text="elementary" />
 
-        <TextView
-            android:id="@+id/likes_count"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_below="@+id/podcast_title"
-            android:textSize="14sp"
-            tools:text="67" />
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:layout_toLeftOf="@+id/likes_count"
+                android:paddingRight="4dp"
+                android:src="@mipmap/podcast_like_icon" />
+
+            <TextView
+                android:id="@+id/likes_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_horizontal"
+                android:paddingRight="16dp"
+                android:textSize="14sp"
+                tools:text="67" />
+        </RelativeLayout>
 
     </RelativeLayout>
 
