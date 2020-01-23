@@ -3,7 +3,6 @@ package com.example.android.fluentcast;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AbsListView;
-import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
@@ -65,9 +64,9 @@ public class PodcastActivity extends AppCompatActivity {
         transcriptsArray.add(new Transcript("Thank you! It would be great!",
                 "Спасибо! Это будет здорово!"));
 
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, transcriptsArray);
+        TranscriptAdapter transcriptAdapter = new TranscriptAdapter(this, transcriptsArray);
         ListView listView = findViewById(R.id.transcript_list);
-        listView.setAdapter(arrayAdapter);
+        listView.setAdapter(transcriptAdapter);
 
         listView.setOnScrollListener(new AbsListView.OnScrollListener() {
 
