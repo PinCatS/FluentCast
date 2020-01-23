@@ -55,7 +55,7 @@
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/likes_count"
                 android:paddingRight="4dp"
-                android:src="@mipmap/podcast_like_icon" />
+                tools:src="@mipmap/podcast_like_icon" />
 
             <TextView
                 android:id="@+id/likes_count"

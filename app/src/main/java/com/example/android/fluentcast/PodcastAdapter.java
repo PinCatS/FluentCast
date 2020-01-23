@@ -67,6 +67,12 @@ class PodcastAdapter extends ArrayAdapter<Podcast> {
             viewHolder.podcastLevelView.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.language_level_tag_upper_intermediate_background));
         }
         viewHolder.podcastLikesCounterView.setText(String.valueOf(podcast.getLikesCounter()));
+
+        if (!podcast.wasLiked()) {
+            viewHolder.likesButton.setImageResource(R.mipmap.podcast_like_icon);
+        } else {
+            viewHolder.likesButton.setImageResource(R.mipmap.podcast_like_filled_icon);
+        }
         viewHolder.likesButton.setOnClickListener(mClickListener);
         viewHolder.likesButton.setTag(position);
 
