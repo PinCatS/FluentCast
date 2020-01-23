@@ -1,7 +1,6 @@
 package com.example.android.fluentcast;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AbsListView;
 import android.widget.ArrayAdapter;
@@ -78,17 +77,13 @@ public class PodcastActivity extends AppCompatActivity {
                 }
 
                 if (firstVisibleItem > lastVisibleItem) {
-                    Log.v("PodcastActivity.java", "onScroll: scroll down");
                     playControlLayout.setVisibility(View.INVISIBLE);
                 } else if (firstVisibleItem < lastVisibleItem) {
-                    Log.v("PodcastActivity.java", "onScroll: scroll up");
                     playControlLayout.setVisibility(View.VISIBLE);
                 } else {
                     if (top < lastY) {
-                        Log.v("PodcastActivity.java", "onScroll: else scroll down");
                         playControlLayout.setVisibility(View.INVISIBLE);
                     } else if (top > lastY) {
-                        Log.v("PodcastActivity.java", "onScroll: else scroll up");
                         playControlLayout.setVisibility(View.VISIBLE);
                     }
                 }
