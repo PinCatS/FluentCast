@@ -2,8 +2,10 @@ package com.example.android.fluentcast;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.AbsListView;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,6 +26,9 @@ public class PodcastActivity extends AppCompatActivity {
         }
 
         this.setTitle(podcastName);
+
+        LinearLayout playControlLayout = findViewById(R.id.podcast_play_control);
+        playControlLayout.setVisibility(View.VISIBLE);
 
         ArrayList<String> transcriptsArray = new ArrayList<>();
         transcriptsArray.add("Hi! My name is Sergey1");
@@ -63,7 +68,7 @@ public class PodcastActivity extends AppCompatActivity {
 
             private int lastVisibleItem = 0;
             private int lastY = 0;
-
+            private final LinearLayout playControlLayout = findViewById(R.id.podcast_play_control);
 
             public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
                 int top = 0;
@@ -74,13 +79,17 @@ public class PodcastActivity extends AppCompatActivity {
 
                 if (firstVisibleItem > lastVisibleItem) {
                     Log.v("PodcastActivity.java", "onScroll: scroll down");
+                    playControlLayout.setVisibility(View.INVISIBLE);
                 } else if (firstVisibleItem < lastVisibleItem) {
                     Log.v("PodcastActivity.java", "onScroll: scroll up");
+                    playControlLayout.setVisibility(View.VISIBLE);
                 } else {
                     if (top < lastY) {
                         Log.v("PodcastActivity.java", "onScroll: else scroll down");
+                        playControlLayout.setVisibility(View.INVISIBLE);
                     } else if (top > lastY) {
                         Log.v("PodcastActivity.java", "onScroll: else scroll up");
+                        playControlLayout.setVisibility(View.VISIBLE);
                     }
                 }
 
