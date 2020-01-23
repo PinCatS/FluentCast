@@ -1,7 +1,6 @@
 package com.example.android.fluentcast;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,7 +25,7 @@ class PodcastAdapter extends ArrayAdapter<Podcast> {
             } else {
                 podcast.increaseLikesCounter();
             }
-            Log.v("PodcastAdapter.java", "likes.OnClickListener: like was clicked. Was liked ?" + podcast.wasLiked() + " " + podcast.getLikesCounter());
+            notifyDataSetChanged();
         }
     };
 
