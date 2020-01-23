@@ -1,6 +1,8 @@
 package com.example.android.fluentcast;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.AbsListView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -56,5 +58,39 @@ public class PodcastActivity extends AppCompatActivity {
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, transcriptsArray);
         ListView listView = findViewById(R.id.transcript_list);
         listView.setAdapter(arrayAdapter);
+
+        listView.setOnScrollListener(new AbsListView.OnScrollListener() {
+
+            private int lastVisibleItem = 0;
+            private int lastY = 0;
+
+
+            public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+                int top = 0;
+
+                if (view.getChildAt(0) != null) {
+                    top = view.getChildAt(0).getTop();
+                }
+
+                if (firstVisibleItem > lastVisibleItem) {
+                    Log.v("PodcastActivity.java", "onScroll: scroll down");
+                } else if (firstVisibleItem < lastVisibleItem) {
+                    Log.v("PodcastActivity.java", "onScroll: scroll up");
+                } else {
+                    if (top < lastY) {
+                        Log.v("PodcastActivity.java", "onScroll: else scroll down");
+                    } else if (top > lastY) {
+                        Log.v("PodcastActivity.java", "onScroll: else scroll up");
+                    }
+                }
+
+                lastVisibleItem = firstVisibleItem;
+                lastY = top;
+
+            }
+
+            public void onScrollStateChanged(AbsListView view, int scrollState) {
+            }
+        });
     }
 }
