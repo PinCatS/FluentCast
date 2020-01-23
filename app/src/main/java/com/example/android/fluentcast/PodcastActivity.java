@@ -29,35 +29,41 @@ public class PodcastActivity extends AppCompatActivity {
         LinearLayout playControlLayout = findViewById(R.id.podcast_play_control);
         playControlLayout.setVisibility(View.VISIBLE);
 
-        ArrayList<String> transcriptsArray = new ArrayList<>();
-        transcriptsArray.add("Hi! My name is Sergey1");
-        transcriptsArray.add("Hi! My name is Sergey2");
-        transcriptsArray.add("Hi! My name is Sergey3");
-        transcriptsArray.add("Hi! My name is Sergey4");
-        transcriptsArray.add("Hi! My name is Sergey5");
-        transcriptsArray.add("Hi! My name is Sergey6");
-        transcriptsArray.add("Hi! My name is Sergey7");
-        transcriptsArray.add("Hi! My name is Sergey8");
-        transcriptsArray.add("Hi! My name is Sergey9");
-        transcriptsArray.add("Hi! My name is Sergey10");
-        transcriptsArray.add("Hi! My name is Sergey11");
-        transcriptsArray.add("Hi! My name is Sergey12");
-        transcriptsArray.add("Hi! My name is Sergey13");
-        transcriptsArray.add("Hi! My name is Sergey13");
-        transcriptsArray.add("Hi! My name is Sergey13");
-        transcriptsArray.add("Hi! My name is Sergey13");
-        transcriptsArray.add("Hi! My name is Sergey13");
-        transcriptsArray.add("Hi! My name is Sergey13");
-        transcriptsArray.add("Hi! My name is Sergey13");
-        transcriptsArray.add("Hi! My name is Sergey13");
-        transcriptsArray.add("Hi! My name is Sergey13");
-        transcriptsArray.add("Hi! My name is Sergey13");
-        transcriptsArray.add("Hi! My name is Sergey13");
-        transcriptsArray.add("Hi! My name is Sergey13");
-        transcriptsArray.add("Hi! My name is Sergey13");
-        transcriptsArray.add("Hi! My name is Sergey13");
-        transcriptsArray.add("Hi! My name is Sergey13");
-        transcriptsArray.add("Hi! My name is Sergey13");
+        ArrayList<Transcript> transcriptsArray = new ArrayList<>();
+        transcriptsArray.add(new Transcript("Hello! My name is Mariya. What’s your name?",
+                "Здравствуйте! Меня зовут Мария. А как вас зовут?"));
+        transcriptsArray.add(new Transcript("Nice to meet you! My name is Ann.",
+                "Приятно познакомиться! Меня зовут Анна"));
+        transcriptsArray.add(new Transcript("Nice to meet you too!",
+                "Мне также приятно познакомиться вами!"));
+        transcriptsArray.add(new Transcript("I live in Kiev. And where do you live?",
+                "Я живу в Киеве. А вы где живёте?"));
+        transcriptsArray.add(new Transcript("I live in Donetsk but I study in Kiev.",
+                "Я живу в Донецке, но учусь в Киеве."));
+        transcriptsArray.add(new Transcript("Are you also a student?",
+                "Вы тоже студентка?"));
+        transcriptsArray.add(new Transcript("Yes, I am an economist, and you?",
+                "Да, я экономист. А вы?"));
+        transcriptsArray.add(new Transcript("I study foreign languages. That’s my future profession and a hobby.",
+                "Я изучаю иностранные языки. Это моя будущая профессия и хобби."));
+        transcriptsArray.add(new Transcript("Do you have a hobby?",
+                "У тебя есть хобби?"));
+        transcriptsArray.add(new Transcript("I like reading books. My favourite author is Chekhov.",
+                "Я люблю читать книги. Мой любимый автор - Чехов"));
+        transcriptsArray.add(new Transcript("I like him too. I have read some of his books recently.",
+                "Мне он тоже нравится. Я недавно прочитал несклько его книг"));
+        transcriptsArray.add(new Transcript("I also like cooking.",
+                "Мне также нравится готовить."));
+        transcriptsArray.add(new Transcript("When my friends come to me, I usually prepare something tasty for them.",
+                "Когда мои друзья приходят ко мне, я обычно готовлю что-нибудь вкусное для них."));
+        transcriptsArray.add(new Transcript("They say, I cook very well.",
+                "Они говорят, я готовлю очень хорошо."));
+        transcriptsArray.add(new Transcript("If you like, I may give you a recipe of my apple pie.",
+                "Если хочешь, я могу дать тебе мой рецепт яблочного пирога."));
+        transcriptsArray.add(new Transcript("It is very tasty.",
+                "Он очень вкусный."));
+        transcriptsArray.add(new Transcript("Thank you! It would be great!",
+                "Спасибо! Это будет здорово!"));
 
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, transcriptsArray);
         ListView listView = findViewById(R.id.transcript_list);
