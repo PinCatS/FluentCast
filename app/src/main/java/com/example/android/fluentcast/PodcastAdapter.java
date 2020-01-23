@@ -21,8 +21,12 @@ class PodcastAdapter extends ArrayAdapter<Podcast> {
         public void onClick(View v) {
             int position = (int) v.getTag();
             Podcast podcast = getItem(position);
-            podcast.mLikesCounter++;
-            Log.v("PodcastAdapter.java", "likes.OnClickListener: like was clicked. Current likes " + podcast.mLikesCounter);
+            if (podcast.wasLiked()) {
+                podcast.decreaseLikesCounter();
+            } else {
+                podcast.increaseLikesCounter();
+            }
+            Log.v("PodcastAdapter.java", "likes.OnClickListener: like was clicked. Was liked ?" + podcast.wasLiked() + " " + podcast.getLikesCounter());
         }
     };
 
