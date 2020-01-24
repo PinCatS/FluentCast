@@ -8,6 +8,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import java.util.ArrayList;
 import java.util.MissingResourceException;
@@ -17,14 +18,21 @@ public class PodcastActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_podcast);
+
+        /* Find and set the custom Top App Bar */
+        Toolbar myToolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(myToolbar);
 
         String podcastName = getIntent().getStringExtra("EXTRA_PODCAST_NAME");
         if (podcastName == null) {
             throw new MissingResourceException("No podcast name", "TopicActivity.java", "EXTRA_PODCAST_NAME");
         }
 
+        setContentView(R.layout.activity_podcast);
+
         this.setTitle(podcastName);
+        myToolbar = findViewById(R.id.toolbar);
+        myToolbar.setTitle(podcastName);
 
         LinearLayout playControlLayout = findViewById(R.id.podcast_play_control);
         playControlLayout.setVisibility(View.VISIBLE);
