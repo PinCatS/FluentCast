@@ -11,8 +11,8 @@
             android:id="@+id/podcast_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="16dp"
-            android:textColor="#212121"
+            android:paddingLeft="@dimen/horizontalPadding"
+            android:textColor="@color/colorPrimaryText"
             android:textSize="18sp"
             android:textStyle="bold"
             android:paddingBottom="8dp"
@@ -28,10 +28,10 @@
                 android:id="@+id/podcast_level"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
+                android:layout_marginLeft="@dimen/horizontalPadding"
                 android:background="@drawable/language_level_tag_elementary_background"
                 android:layout_centerVertical="true"
-                android:textColor="#757575"
+                android:textColor="@color/colorSecondaryText"
                 android:textSize="14sp"
                 tools:text="elementary" />
 
@@ -58,7 +58,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
-                android:paddingRight="16dp"
+                android:paddingRight="@dimen/horizontalPadding"
                 android:textSize="14sp"
                 tools:text="67" />
         </RelativeLayout>
