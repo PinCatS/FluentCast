@@ -49,7 +49,8 @@
                 android:layout_height="18dp"
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/likes_count"
-                android:paddingRight="4dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="4dp"
                 tools:src="@mipmap/podcast_like_icon" />
 
             <TextView
@@ -58,8 +59,9 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
-                android:paddingRight="@dimen/horizontalPadding"
+                android:minEms="2"
                 android:textSize="14sp"
+                android:paddingRight="@dimen/horizontalPaddingSmall"
                 tools:text="67" />
         </RelativeLayout>
 

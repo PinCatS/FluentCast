@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
         topics.add(new TopicCard("Technologies", 2, R.drawable.technologies, R.color.technologies_card_color));
         topics.add(new TopicCard("Business", 0, R.drawable.business, R.color.business_card_color));
         topics.add(new TopicCard("Cultures", 0, R.drawable.culture, R.color.culture_card_color));
-        topics.add(new TopicCard("Story tails", 0));
 
         TopicCardAdapter topicCardAdapter = new TopicCardAdapter(this, topics);
         GridView view = findViewById(R.id.topic_list);

@@ -45,7 +45,7 @@ public class PodcastActivity extends AppCompatActivity {
 
         ArrayList<Transcript> transcriptsArray = new ArrayList<>();
 
-        if (podcastName.equals("Hi! My name is Peter")) {
+        if (podcastName.equals("Hello! My name is Maria")) {
             transcriptsArray.add(new Transcript("Hello! My name is Mariya. What’s your name?",
                     "Здравствуйте! Меня зовут Мария. А как вас зовут?"));
             transcriptsArray.add(new Transcript("Nice to meet you! My name is Ann.",
