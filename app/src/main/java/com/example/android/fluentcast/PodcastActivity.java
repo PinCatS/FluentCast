@@ -3,6 +3,7 @@ package com.example.android.fluentcast;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AbsListView;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -14,6 +15,8 @@ import java.util.ArrayList;
 import java.util.MissingResourceException;
 
 public class PodcastActivity extends AppCompatActivity {
+
+    private boolean isPlaying = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,6 +92,36 @@ public class PodcastActivity extends AppCompatActivity {
             listView.setVisibility(View.GONE);
             transcriptsUnavailableView.setVisibility(View.VISIBLE);
         }
+
+        final ImageView prevButton = findViewById(R.id.prev_button);
+        prevButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        final ImageView nextButton = findViewById(R.id.next_button);
+        nextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        final ImageView playButton = findViewById(R.id.control_button);
+        playButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!isPlaying) {
+                    playButton.setImageResource(R.drawable.stop_button);
+                    isPlaying = true;
+                } else {
+                    playButton.setImageResource(R.drawable.play_button);
+                    isPlaying = false;
+                }
+            }
+        });
 
         listView.setOnScrollListener(new AbsListView.OnScrollListener() {
 
