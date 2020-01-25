@@ -14,6 +14,11 @@ import androidx.appcompat.widget.Toolbar;
 import java.util.ArrayList;
 import java.util.MissingResourceException;
 
+/*
+ * PodcastActivity is called from TopicActivity when user clicks on any of the podcasts.
+ * The activity let user play podcast and read transcript if it is available.
+ *
+ * */
 public class PodcastActivity extends AppCompatActivity {
 
     private boolean isPlaying = false;

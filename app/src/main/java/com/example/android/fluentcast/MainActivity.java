@@ -11,6 +11,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 
+/*
+ * Main activity lists Topics where podcasts are grouped.
+ * By clicking on these topics, user will be directed to
+ * Topic activity, where podcasts relative to that topic are listed.
+ *
+ * */
 public class MainActivity extends AppCompatActivity {
 
     @Override

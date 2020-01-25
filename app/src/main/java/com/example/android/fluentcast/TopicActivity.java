@@ -12,6 +12,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 import java.util.MissingResourceException;
 
+/*
+ * The TopicActivity is called from MainActivity.
+ * User is directed here when he clicks on the topic.
+ * The activity lists all available podcasts related to the
+ * topic user clicked.
+ * Here they could like any podcast or click on it.
+ * After clicking, user will be directed to PodcastActivity
+ * where they are able to play podcast and read transcript if
+ * available.
+ *
+ * */
 public class TopicActivity extends AppCompatActivity {
 
     @Override
