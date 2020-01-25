@@ -21,7 +21,6 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/podcast_title"
             android:orientation="horizontal">
 
             <TextView

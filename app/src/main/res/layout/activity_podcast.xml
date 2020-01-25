@@ -32,7 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:text="Transcripts not available"
+        android:text="@string/transcripts_not_available"
         android:textSize="18sp"
         android:visibility="gone" />
 

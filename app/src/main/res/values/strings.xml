@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">FluentCast</string>
+    <string name="transcripts_not_available">Transcripts not available</string>
 </resources>
