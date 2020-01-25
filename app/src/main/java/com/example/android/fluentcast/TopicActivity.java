@@ -37,7 +37,7 @@ public class TopicActivity extends AppCompatActivity {
          * */
         switch (topic_name) {
             case "People":
-                podcasts.add(new Podcast("Hi! My name is Peter", "elementary", 67));
+                podcasts.add(new Podcast("Hello! My name is Maria", "elementary", 67));
                 podcasts.add(new Podcast("I can't talk now", "elementary", 15));
                 podcasts.add(new Podcast("Can you do me a favor?", "pre-intermediate", 34));
                 podcasts.add(new Podcast("Excuse me!", "elementary", 23));
