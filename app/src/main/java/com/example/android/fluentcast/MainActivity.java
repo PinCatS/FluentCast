@@ -18,6 +18,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.topic_list);
 
+        /*
+         * Adding list of podcast topics. In reality they will be fetched from the server
+         * */
         final ArrayList<TopicCard> topics = new ArrayList<>();
         topics.add(new TopicCard("People", 6, R.drawable.people, R.color.people_card_color));
         topics.add(new TopicCard("Travelling", 2, R.drawable.travelling, R.color.travelling_card_color));
@@ -31,6 +34,10 @@ public class MainActivity extends AppCompatActivity {
         GridView view = findViewById(R.id.topic_list);
         view.setAdapter(topicCardAdapter);
 
+        /*
+         * Send an explicit intent to open podcast activity.
+         * Pass to the activity the topic name which was clicked.
+         * */
         view.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {

@@ -13,6 +13,9 @@ import androidx.core.content.ContextCompat;
 
 import java.util.List;
 
+/*
+ * PodcastAdapter provides views for podcast items.
+ **/
 class PodcastAdapter extends ArrayAdapter<Podcast> {
 
     private View.OnClickListener mClickListener = new View.OnClickListener() {

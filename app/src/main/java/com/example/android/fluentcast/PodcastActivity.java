@@ -43,8 +43,11 @@ public class PodcastActivity extends AppCompatActivity {
         ListView listView = findViewById(R.id.transcript_list);
         TextView transcriptsUnavailableView = findViewById(R.id.transcripts_unavailable);
 
+        /*
+         * The transcript of the podcast. In reality, it should be in the Podcast class and
+         * retrieved from the server. Here it is hardcoded for one of the podcasts for the simplicity.
+         * */
         ArrayList<Transcript> transcriptsArray = new ArrayList<>();
-
         if (podcastName.equals("Hello! My name is Maria")) {
             transcriptsArray.add(new Transcript("Hello! My name is Mariya. What’s your name?",
                     "Здравствуйте! Меня зовут Мария. А как вас зовут?"));
@@ -82,6 +85,9 @@ public class PodcastActivity extends AppCompatActivity {
                     "Спасибо! Это будет здорово!"));
         }
 
+        /*
+         * If there is not trascript for a podcast, show the message that transcript is unavailable
+         * */
         TranscriptAdapter transcriptAdapter;
         if (transcriptsArray.size() > 0) {
             transcriptsUnavailableView.setVisibility(View.GONE);
@@ -109,6 +115,11 @@ public class PodcastActivity extends AppCompatActivity {
             }
         });
 
+        /*
+         * Switch between play and stop button.
+         * When user clicks on play button it switches to stop button and
+         * if it clicks on stop button, it switches back to play button.
+         * */
         final ImageView playButton = findViewById(R.id.control_button);
         playButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -123,6 +134,10 @@ public class PodcastActivity extends AppCompatActivity {
             }
         });
 
+        /*
+         * Hide playback control panes if user scrolls down, so they are able to see
+         * the transcripts at the bottom too.
+         * */
         listView.setOnScrollListener(new AbsListView.OnScrollListener() {
 
             private int lastVisibleItem = 0;

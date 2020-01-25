@@ -1,5 +1,8 @@
 package com.example.android.fluentcast;
 
+/*
+ * Represents transcript in two languages: native and the one which user is learning.
+ * */
 public class Transcript {
     String mLearningLanguage;
     String mNativeLanguage;

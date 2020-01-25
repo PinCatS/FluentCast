@@ -14,6 +14,9 @@ import androidx.core.content.ContextCompat;
 
 import java.util.List;
 
+/*
+ * TopicCardAdapter provides views for topics.
+ **/
 public class TopicCardAdapter extends ArrayAdapter<TopicCard> {
 
     public TopicCardAdapter(Context context, List<TopicCard> objects) {

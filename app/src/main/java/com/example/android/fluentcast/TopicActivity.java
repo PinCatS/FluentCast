@@ -2,7 +2,6 @@ package com.example.android.fluentcast;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -27,14 +26,12 @@ public class TopicActivity extends AppCompatActivity {
 
         this.setTitle(topic_name);
 
-        Log.d("TopicActivity.java", "onCreate: topic name: " + topic_name);
-
-        final ArrayList<Podcast> podcasts = new ArrayList<>();
         /*
          * In the future podcasts will be loaded from the server by key
          * or identifier. But now use the switch statement for this.
          *
          * */
+        final ArrayList<Podcast> podcasts = new ArrayList<>();
         switch (topic_name) {
             case "People":
                 podcasts.add(new Podcast("Hello! My name is Maria", "elementary", 67));
@@ -73,6 +70,11 @@ public class TopicActivity extends AppCompatActivity {
         ListView podcastList = findViewById(R.id.podcast_list);
         podcastList.setAdapter(podcastAdapter);
 
+        /*
+         * Use explicit intent to start PodcastAcitvity.
+         * Pass podcast name to it.
+         *
+         * */
         podcastList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {

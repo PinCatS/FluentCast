@@ -1,5 +1,10 @@
 package com.example.android.fluentcast;
 
+/*
+ *  Podcast class represents podcast.
+ *  It has title, target level of learning language of the podcast.
+ *  And likes counter.
+ * */
 public class Podcast {
     private String mTitle;
     private String mLevel;

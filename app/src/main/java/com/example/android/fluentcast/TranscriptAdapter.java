@@ -11,6 +11,9 @@ import androidx.annotation.Nullable;
 
 import java.util.List;
 
+/*
+ * TranscriptAdapter provides views for transcripts
+ * */
 class TranscriptAdapter extends ArrayAdapter<Transcript> {
 
     public TranscriptAdapter(Context context, List<Transcript> transcripts) {
