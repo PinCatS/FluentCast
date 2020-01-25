@@ -1,20 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/topic_item"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <com.google.android.material.card.MaterialCardView
-        style="@style/Widget.MaterialComponents.CardView"
-        android:layout_width="168dp"
-        android:layout_height="256dp"
-        android:minHeight="256dp"
-        app:cardCornerRadius="4dp"
-        app:cardElevation="1dp"
-        app:cardUseCompatPadding="true">
+    <com.google.android.material.card.MaterialCardView style="@style/TopicCardStyle">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -40,8 +32,8 @@
                     android:id="@+id/topic_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="16dp"
-                    android:paddingTop="8dp"
+                    android:paddingLeft="@dimen/horizontalPadding"
+                    android:paddingTop="@dimen/verticalPaddingSmall"
                     tools:text="People"
                     android:textColor="@android:color/white"
                     android:textSize="20sp"
@@ -51,9 +43,8 @@
                     android:id="@+id/podcast_count"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/topic_title"
-                    android:paddingLeft="16dp"
-                    android:text="20 podcasts"
+                    android:paddingLeft="@dimen/horizontalPadding"
+                    tools:text="20 podcasts"
                     android:textColor="@android:color/white" />
             </LinearLayout>
         </RelativeLayout>

@@ -5,8 +5,8 @@
     android:layout_height="match_parent"
     android:numColumns="2"
     android:orientation="vertical"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp"
+    android:paddingLeft="@dimen/horizontalPadding"
+    android:paddingRight="@dimen/horizontalPadding"
     android:scrollbars="none">
 
 </GridView>
