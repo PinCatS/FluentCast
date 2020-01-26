@@ -60,13 +60,13 @@ class PodcastAdapter extends ArrayAdapter<Podcast> {
         viewHolder.podcastTitleView.setText(podcast.getTitle());
         String level = podcast.getLevel();
         viewHolder.podcastLevelView.setText(level);
-        if (level == "elementary") {
+        if (level.equals("elementary")) {
             viewHolder.podcastLevelView.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.language_level_tag_elementary_background));
-        } else if (level == "pre-intermediate") {
+        } else if (level.equals("pre-intermediate")) {
             viewHolder.podcastLevelView.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.language_level_tag_preintermediate_background));
-        } else if (level == "intermediate") {
+        } else if (level.equals("intermediate")) {
             viewHolder.podcastLevelView.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.language_level_tag_intermediate_background));
-        } else if (level == "upper-intermediate") {
+        } else if (level.equals("upper-intermediate")) {
             viewHolder.podcastLevelView.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.language_level_tag_upper_intermediate_background));
         }
         viewHolder.podcastLikesCounterView.setText(String.valueOf(podcast.getLikesCounter()));
